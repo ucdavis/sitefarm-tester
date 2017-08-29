@@ -1,0 +1,15 @@
+// This is an example of a component that will be autoloaded
+
+.block {
+  // Add any .block styles here
+
+  &__element {
+    // Add any elements styles here
+    // Will become .block__element
+  }
+
+  &--modifier {
+    // Add modifiers here
+    // Will become .block--modifier
+  }
+}

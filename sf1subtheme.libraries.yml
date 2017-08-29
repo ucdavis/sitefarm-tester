@@ -1,0 +1,9 @@
+global-styles:
+  version: VERSION
+  css:
+#    base:
+#      dist/vendor.css: {}
+    theme:
+      dist/style.css: {}
+  js:
+    dist/scripts.js: {}

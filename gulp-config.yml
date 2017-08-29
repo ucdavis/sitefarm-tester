@@ -1,0 +1,70 @@
+# This config may be overridden by creating a gulp-config--custom.yml file
+css:
+  enabled: true
+  src:
+    - sass/**/*.scss
+  vendor:
+    - sass/vendor/**/*.css
+  dest: dist/
+  flattenDestOutput: true
+  lint:
+    enabled: true
+    failOnError: true
+    # Add to the main src glob - useful for exclusions with `!`
+    extraSrc:
+#      - '!excluded-file.scss'
+  # enables additional debugging information in the output file as CSS comments - only use when necessary
+  sourceComments: false
+  sourceMapEmbed: false
+  # tell the compiler whether you want 'expanded' or 'compressed' output code
+  outputStyle: compressed
+  autoPrefixerBrowsers: # https://github.com/ai/browserslist#queries
+    - last 2 versions
+    - IE >= 9
+  includePaths:
+    - ./node_modules
+
+js:
+  enabled: true
+  src:
+    - js/vendor/**/*.js
+    - js/**/*.js
+#    - '!excluded-file.js'
+  dest: dist/
+  destName: scripts.js
+  sourceMapEmbed: false
+  uglify: true
+  babel: true
+  preserveLicense: false
+  eslint:
+    enabled: false
+    failAfterError: true
+    # Add to the main src glob - useful for exclusions with `!`
+    extraSrc:
+      - '!js/vendor/**/*.js'
+
+bowerFiles:
+  enabled: true
+  dir: bower_components
+  includePaths:
+    - bower_components/singularity/stylesheets
+    - bower_components/breakpoint-sass/stylesheets
+    - bower_components/sass-toolkit/stylesheets
+
+browserSync:
+  enabled: true
+  port: 3050
+  watchFiles:
+#    - 'public/**/*.html'
+#  domain: mydomain.local # Change this in the local config file
+  baseDir: ./
+  startPath: '/'
+  openBrowserAtStart: true
+  # requires above to be true; allows non-default browser to open
+  browser:
+    - Google Chrome
+  # Tunnel the Browsersync server through a random Public URL
+  # -> http://randomstring23232.localtunnel.me
+#  tunnel: ucdsitefarmone
+  reloadDelay: 50
+  reloadDebounce: 750

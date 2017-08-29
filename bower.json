@@ -1,0 +1,21 @@
+{
+  "name": "sf1subtheme",
+  "version": "1.0.0",
+  "description": "Components and dependencies for a SiteFarm One subtheme",
+  "keywords": [
+    "sass"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "singularity": "1.6.2",
+    "breakpoint-sass": "~2.6.1",
+    "sass-toolkit": "2.9.0"
+  }
+}
